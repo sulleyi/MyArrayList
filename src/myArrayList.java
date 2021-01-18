@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class MyArrayList<E> extends AbstractList<E> implements List<E>{
+public class myArrayList<E> extends AbstractList<E> implements List<E>{
 
     private int size; //number of elements
     private E[] myArray;
 
-
+    @SuppressWarnings("unchecked")
     public myArrayList(){
         myArray = (E[]) new Object[10]; //Typecast the new Object[] as any datatype E[]
         size = 0;
@@ -21,7 +21,7 @@ public class MyArrayList<E> extends AbstractList<E> implements List<E>{
     }
 
     public boolean isEmpty() {
-        return size == 0;
+        return size == 0; //returns  true if array myArrayList is empty, false otherwise.
     }
 
     public boolean contains(Object o) {
