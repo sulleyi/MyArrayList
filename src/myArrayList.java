@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class myArrayList<E> extends AbstractList<E> implements List<E>{
+public class myArrayList<E> implements List<E>{
 
     private int size; //number of elements
     private E[] myArray;
