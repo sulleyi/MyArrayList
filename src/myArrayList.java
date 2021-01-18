@@ -11,17 +11,17 @@ public class myArrayList<E> implements List<E>{
         size = 0;
     }
 
-    @Override
+    //returns the size of myArrayList
     public int size() {
         return size;
     }
 
-    @Override
+    //returns  true if array myArrayList is empty, false otherwise.
     public boolean isEmpty() {
-        return size == 0; //returns  true if array myArrayList is empty, false otherwise.
+        return size == 0;
     }
 
-    @Override
+    //returns true if o is an element of myArrayList, false otherwise
     public boolean contains(Object o) {
 
         for (E e : myArray) {
@@ -32,20 +32,19 @@ public class myArrayList<E> implements List<E>{
         return false;
     }
 
+    //returns an iterator for myArrayList
     public Iterator<E> iterator() {
 
         E[] myArrayCopy = Arrays.copyOf(myArray, size);
         return Arrays.asList(myArrayCopy).iterator();
     }
 
+    //returns an myArrayList as an array
     public Object[] toArray() {
-        return new Object[0];
-    }
-
-    public <E> E[] toArray(E[] ts) {
         return (E[]) Arrays.copyOf(myArray, size);
     }
 
+    //adds element e to myArrayList
     public boolean add(E e) {
 
         if(size == myArray.length){
@@ -58,6 +57,7 @@ public class myArrayList<E> implements List<E>{
 
     }
 
+    //removes object o from myArrayList
     public boolean remove(Object o) {
 
         int index = indexOf(o);
@@ -68,27 +68,17 @@ public class myArrayList<E> implements List<E>{
         return true;
     }
 
-
+    //clears myArrayList
     public void clear() {
         size = 0;
     }
 
-    public boolean equals(Object o) {
-        return false;
-    }
-
+    //returns element at index i
     public E get(int i) {
         return myArray[i];
     }
 
-    public E set(int i, E e) {
-        return null;
-    }
-
-    public void add(int i, E e) {
-
-    }
-
+    //removes and returns element at index
     public E remove(int index) {
         E arrayListElement = get(index);
         for(int i = index; i < myArray.length-1; i++){
@@ -98,25 +88,19 @@ public class myArrayList<E> implements List<E>{
         return arrayListElement;
     }
 
-    public int indexOf(Object o) {
-        return 0;
-    }
-
-    public int lastIndexOf(Object o) {
-        return 0;
-    }
-
+    //returns a ListIterator for myArrayList
     public ListIterator<E> listIterator() {
         E[] myArrayCopy = Arrays.copyOf(myArray, size);
         return Arrays.asList(myArrayCopy).listIterator();
     }
 
+    //returns a listIterator for myArrayLst
     public ListIterator<E> listIterator(int i) {
         E[] myArrayCopy = Arrays.copyOf(myArray, size);
         return Arrays.asList(myArrayCopy).listIterator(i);
     }
 
-
+    //doubles the capacity of myArrayList
     public void resize(){
         E[] newArray = (E[]) new Object[myArray.length * 2];
         for(int i = 0; i <= myArray.length; i++){
@@ -124,6 +108,13 @@ public class myArrayList<E> implements List<E>{
         }
         myArray = newArray;
     }
+
+    /*
+     *
+     *Unsupported Methods
+     *
+     */
+
     public boolean containsAll(Collection<?> collection) {
         throw new UnsupportedOperationException();
     }
@@ -147,6 +138,27 @@ public class myArrayList<E> implements List<E>{
         throw new UnsupportedOperationException();
     }
     public List<E> subList(int i, int i1) {
+        throw new UnsupportedOperationException();
+    }
+    public <E> E[] toArray(E[] ts) {
+        throw new UnsupportedOperationException();
+    }
+    public boolean equals(Object o) {
+        throw new UnsupportedOperationException();
+    }
+    public E set(int i, E e) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void add(int i, E e) {
+        throw new UnsupportedOperationException();
+    }
+
+    public int indexOf(Object o) {
+        throw new UnsupportedOperationException();
+    }
+
+    public int lastIndexOf(Object o) {
         throw new UnsupportedOperationException();
     }
 }
