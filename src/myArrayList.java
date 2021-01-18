@@ -47,14 +47,18 @@ public class myArrayList<E> implements List<E>{
     //adds element e to myArrayList
     public boolean add(E e) {
 
-        if(size == myArray.length){
-            resize();
+       //A contrived example of a try, catch, finally block
+        try{
+            myArray[size] = e;
         }
-
-        myArray[size] = e;
-        size++;
+        catch(IndexOutOfBoundsException exception){
+            resize();
+            myArray[size] = e;
+        }
+        finally {
+            size++;
+        }
         return true;
-
     }
 
     //removes object o from myArrayList
