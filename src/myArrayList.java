@@ -11,25 +11,31 @@ public class myArrayList<E> implements List<E>{
         size = 0;
     }
 
-
-
-
     @Override
     public int size() {
-
         return size;
     }
 
+    @Override
     public boolean isEmpty() {
         return size == 0; //returns  true if array myArrayList is empty, false otherwise.
     }
 
+    @Override
     public boolean contains(Object o) {
+
+        for (E e : myArray) {
+            if (e.equals(o)) {
+                return true;
+            }
+        }
         return false;
     }
 
     public Iterator<E> iterator() {
-        return null;
+
+        E[] myArrayCopy = Arrays.copyOf(myArray, size);
+        return Arrays.asList(myArrayCopy).iterator();
     }
 
     public Object[] toArray() {
