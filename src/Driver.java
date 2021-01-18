@@ -34,9 +34,5 @@ public class Driver {
         System.out.println("Now the size of testArrayList is: ");
         System.out.println(testArrayList.size());
 
-
-
-
-
     }
 }
