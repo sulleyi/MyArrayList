@@ -42,8 +42,8 @@ public class myArrayList<E> implements List<E>{
         return new Object[0];
     }
 
-    public <T> T[] toArray(T[] ts) {
-        return null;
+    public <E> E[] toArray(E[] ts) {
+        return (E[]) Arrays.copyOf(myArray, size);
     }
 
     public boolean add(E e) {
