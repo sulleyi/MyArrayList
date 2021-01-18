@@ -59,7 +59,13 @@ public class myArrayList<E> implements List<E>{
     }
 
     public boolean remove(Object o) {
-        return false;
+
+        int index = indexOf(o);
+        if(index == -1){
+            return false;
+        }
+        remove(index);
+        return true;
     }
 
     public boolean containsAll(Collection<?> collection) {
@@ -95,7 +101,7 @@ public class myArrayList<E> implements List<E>{
     }
 
     public E get(int i) {
-        return null;
+        return myArray[i];
     }
 
     public E set(int i, E e) {
@@ -106,8 +112,13 @@ public class myArrayList<E> implements List<E>{
 
     }
 
-    public E remove(int i) {
-        return null;
+    public E remove(int index) {
+        E arrayListElement = get(index);
+        for(int i = index; i < myArray.length-1; i++){
+            myArray[i] = myArray[i + 1];
+        }
+        size--;
+        return arrayListElement;
     }
 
     public int indexOf(Object o) {
