@@ -113,6 +113,21 @@ public class myArrayList<E> implements List<E>{
         myArray = newArray;
     }
 
+    //Returns true if the object equals myArrayList
+    public boolean equals(Object o) {
+        return this.equals(o);
+    }
+
+    //returns the index of the object o in myArrayList
+    public int indexOf(Object o) {
+        for (int i = 0; i<size; i++) {
+            if (o.equals(myArray[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     /*
      *
      *Unsupported Methods
@@ -147,18 +162,12 @@ public class myArrayList<E> implements List<E>{
     public <E> E[] toArray(E[] ts) {
         throw new UnsupportedOperationException();
     }
-    public boolean equals(Object o) {
-        throw new UnsupportedOperationException();
-    }
+
     public E set(int i, E e) {
         throw new UnsupportedOperationException();
     }
 
     public void add(int i, E e) {
-        throw new UnsupportedOperationException();
-    }
-
-    public int indexOf(Object o) {
         throw new UnsupportedOperationException();
     }
 
