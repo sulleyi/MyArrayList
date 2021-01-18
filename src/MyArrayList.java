@@ -1,12 +1,27 @@
 import java.util.*;
 
 public class MyArrayList<E> extends AbstractList<E> implements List<E>{
+
+    private int size; //number of elements
+    private E[] myArray;
+
+
+    public myArrayList(){
+        myArray = (E[]) new Object[10]; //Typecast the new Object[] as any datatype E[]
+        size = 0;
+    }
+
+
+
+
+    @Override
     public int size() {
-        return 0;
+
+        return size;
     }
 
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     public boolean contains(Object o) {
