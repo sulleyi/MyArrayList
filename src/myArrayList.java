@@ -47,7 +47,15 @@ public class myArrayList<E> implements List<E>{
     }
 
     public boolean add(E e) {
-        return false;
+
+        if(size == myArray.length){
+            resize();
+        }
+
+        myArray[size] = e;
+        size++;
+        return true;
+
     }
 
     public boolean remove(Object o) {
@@ -120,5 +128,13 @@ public class myArrayList<E> implements List<E>{
 
     public List<E> subList(int i, int i1) {
         return null;
+    }
+
+    public void resize(){
+        E[] newArray = (E[]) new Object[myArray.length * 2];
+        for(int i = 0; i <= myArray.length; i++){
+            newArray[i] = myArray[i];
+        }
+        myArray = newArray;
     }
 }
