@@ -68,36 +68,13 @@ public class myArrayList<E> implements List<E>{
         return true;
     }
 
-    public boolean containsAll(Collection<?> collection) {
-        return false;
-    }
-
-    public boolean addAll(Collection<? extends E> collection) {
-        return false;
-    }
-
-    public boolean addAll(int i, Collection<? extends E> collection) {
-        return false;
-    }
-
-    public boolean removeAll(Collection<?> collection) {
-        return false;
-    }
-
-    public boolean retainAll(Collection<?> collection) {
-        return false;
-    }
 
     public void clear() {
-
+        size = 0;
     }
 
     public boolean equals(Object o) {
         return false;
-    }
-
-    public int hashCode() {
-        return 0;
     }
 
     public E get(int i) {
@@ -130,16 +107,15 @@ public class myArrayList<E> implements List<E>{
     }
 
     public ListIterator<E> listIterator() {
-        return null;
+        E[] myArrayCopy = Arrays.copyOf(myArray, size);
+        return Arrays.asList(myArrayCopy).listIterator();
     }
 
     public ListIterator<E> listIterator(int i) {
-        return null;
+        E[] myArrayCopy = Arrays.copyOf(myArray, size);
+        return Arrays.asList(myArrayCopy).listIterator(i);
     }
 
-    public List<E> subList(int i, int i1) {
-        return null;
-    }
 
     public void resize(){
         E[] newArray = (E[]) new Object[myArray.length * 2];
@@ -147,5 +123,30 @@ public class myArrayList<E> implements List<E>{
             newArray[i] = myArray[i];
         }
         myArray = newArray;
+    }
+    public boolean containsAll(Collection<?> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean addAll(Collection<? extends E> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean addAll(int i, Collection<? extends E> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean removeAll(Collection<?> collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    public boolean retainAll(Collection<?> collection) {
+        throw new UnsupportedOperationException();
+    }
+    public int hashCode() {
+        throw new UnsupportedOperationException();
+    }
+    public List<E> subList(int i, int i1) {
+        throw new UnsupportedOperationException();
     }
 }
