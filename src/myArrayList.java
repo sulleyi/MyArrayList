@@ -3,7 +3,7 @@ import java.util.*;
 public class myArrayList<E> implements List<E>{
 
     private int size; //number of elements
-    private E[] myArray;
+    private E[] myArray; //array of generic type
 
     @SuppressWarnings("unchecked")
     public myArrayList(){
@@ -107,7 +107,7 @@ public class myArrayList<E> implements List<E>{
     //doubles the capacity of myArrayList
     public void resize(){
         E[] newArray = (E[]) new Object[myArray.length * 2];
-        for(int i = 0; i <= myArray.length; i++){
+        for(int i = 0; i < myArray.length; i++){
             newArray[i] = myArray[i];
         }
         myArray = newArray;
