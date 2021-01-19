@@ -10,7 +10,8 @@ implementation, iterators, inheritence. If you implemened an orderedArrayList it
 
 
 ### Generics and Interfaces
-'''
+
+```java
 
     import java.util.*;
 
@@ -18,13 +19,13 @@ implementation, iterators, inheritence. If you implemened an orderedArrayList it
 
     }
 
-'''
+```
 
 This class uses generics so it can be used to store any object. This class implements the List<E> interface. 
 
 ### Iterators
 
-'''
+```java
 
     //returns true if o is an element of myArrayList, false otherwise
     public boolean contains(Object o) {
@@ -37,14 +38,14 @@ This class uses generics so it can be used to store any object. This class imple
         return false;
     }
     
-'''
+```
 
 In the enhanced for loop, the iterator takes advantage of the properties of the List interface.
 
 
 ### Exceptions 
 
-'''
+```java
 
     //adds element e to myArrayList
     public boolean add(E e) {
@@ -63,7 +64,7 @@ In the enhanced for loop, the iterator takes advantage of the properties of the 
         return true;
     }
     
-'''
+```
 
 While this example is slighty contrived, I used it for the sake of this demonstration. In the add function, you can take advantage of the IndexOutOfBoundsException to resize your array appropriately. If add() fails to append the element to the array, it first resizes the array and then tries again in the catch block. In the finally block, the size is updated.
 
