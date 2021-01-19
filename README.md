@@ -1,6 +1,7 @@
 
 # myArrayList<T>
 ## Demonstration from Java Interludes 1-8
+## [Github Link For Code](https://github.com/sulleyi/MyArrayList)
 
 This repository uses some of the concepts explained in Java Interludes 1-8. I have written my own myArrayList<T> class, 
 which  implements the List<T> interface. This project uses generics, polymorphism, interface 
