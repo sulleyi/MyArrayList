@@ -64,4 +64,8 @@ In the enhanced for loop, the iterator takes advantage of the properties of the 
     
 '''
 
-While this example is slighty contrived, I used it for the sake of this demonstration. In the add function, you can take advantage of the IndexOutOfBoundsException to resize your array appropriately. If add() fails to append the element to the array, it first resizes the array and then tries again in the catch block. In the finally block, the size is updated. 
+While this example is slighty contrived, I used it for the sake of this demonstration. In the add function, you can take advantage of the IndexOutOfBoundsException to resize your array appropriately. If add() fails to append the element to the array, it first resizes the array and then tries again in the catch block. In the finally block, the size is updated.
+
+I extensively referenced the [Oracle Java Docs](https://docs.oracle.com/en/java/) while writing this class.
+
+I affirm that I have carried out my academic endeavors with full academic honesty. [Signed, Ian Sulley]
