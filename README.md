@@ -11,11 +11,11 @@ implementation, iterators, inheritence. If you implemened an orderedArrayList it
 ### Generics and Interfaces
 '''
 
-import java.util.*;
+    import java.util.*;
 
-public class myArrayList<E> implements List<E>{
+    public class myArrayList<E> implements List<E>{
 
-}
+    }
 
 '''
 
@@ -24,7 +24,8 @@ This class uses generics so it can be used to store any object. This class imple
 ### Iterators
 
 '''
- //returns true if o is an element of myArrayList, false otherwise
+
+    //returns true if o is an element of myArrayList, false otherwise
     public boolean contains(Object o) {
 
         for (E e : myArray) {
@@ -34,6 +35,7 @@ This class uses generics so it can be used to store any object. This class imple
         }
         return false;
     }
+    
 '''
 
 In the enhanced for loop, the iterator takes advantage of the properties of the List interface.
@@ -42,7 +44,8 @@ In the enhanced for loop, the iterator takes advantage of the properties of the 
 ### Exceptions 
 
 '''
-//adds element e to myArrayList
+
+    //adds element e to myArrayList
     public boolean add(E e) {
 
        //A contrived example of a try, catch, finally block
@@ -58,6 +61,7 @@ In the enhanced for loop, the iterator takes advantage of the properties of the 
         }
         return true;
     }
+    
 '''
 
 While this example is slighty contrived, I used it for the sake of this demonstration. In the add function, you can take advantage of the IndexOutOfBoundsException to resize your array appropriately. If add() fails to append the element to the array, it first resizes the array and then tries again in the catch block. In the finally block, the size is updated. 
